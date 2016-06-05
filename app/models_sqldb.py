@@ -30,7 +30,7 @@ class User(UserMixin, db.Model):
     nickname = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True)
     password_hash = db.Column(db.String(255))
-    history = db.relationship('History', backref='buyer', cascade="all, delete-orphan")
+    history = db.relationship('Order', backref='buyer', cascade="all, delete-orphan")
     isAdmin = db.Column(db.Boolean, default=False)
 
     def __init__(self, **kwargs):
@@ -82,12 +82,20 @@ class Product(db.Model):
     price = db.Column(db.Integer)
     detail = db.Column(db.Text)
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
+    order_item = db.relationship('OrderItem', backref='product', cascade="all, delete-orphan")
 
 
-class History(db.Model):
-    __tablename__ = 'histories'
+class Order(db.Model):
+    __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
-    product_code = db.Column(db.String)
     created_date = db.Column(db.DateTime, default=datetime.datetime.utcnow())
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    order_item = db.relationship('OrderItem', backref='order', cascade="all, delete-orphan")
+
+
+class OrderItem(db.Model):
+    __tablename__ = 'orderitems'
+    id = db.Column(db.Integer, primary_key=True)
     quantity = db.Column(db.Integer)
-    user_id= db.Column(db.Integer, db.ForeignKey('users.id'))
+    order_id = db.Column(db.Integer, db.ForeignKey('orders.id'))
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'))

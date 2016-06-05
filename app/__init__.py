@@ -4,9 +4,11 @@ from config import config
 from flask_login import LoginManager
 from flask_mail import Mail
 import braintree
+import os
+import jinja2
 
 # class called
-
+basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
 loginmanager = LoginManager()
 loginmanager.session_protection = 'strong'
@@ -25,6 +27,8 @@ def create_app(config_name):
         app.config['BT_PUBLIC_KEY'],
         app.config['BT_PRIVATE_KEY']
     )
+    my_loader = jinja2.ChoiceLoader([app.jinja_loader, jinja2.FileSystemLoader('app/static')])
+    app.jinja_loader = my_loader
 
     db.init_app(app)
     loginmanager.init_app(app)

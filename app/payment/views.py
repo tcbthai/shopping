@@ -3,7 +3,7 @@ from cart import Cart
 from flask import session, render_template, request, redirect, url_for, flash
 import braintree
 from flask_login import login_required, current_user
-from app.models_sqldb import History
+from app.models_sqldb import Order, OrderItem,Product
 
 cart = Cart(session)
 
