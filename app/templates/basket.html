@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% if buying %}
+{% for product in buying %}
+{% for k,v in product.items() %}
+<p> Product: {{k.name}}</p>
+{{k.image}}
+<p>Price: {{k.price//1000 *v|int}}$</p>
+<p>Quantity: {{v}}</p>
+<a class="btn bg-danger" href="{{url_for('payment.remove',product_code= k.product_code)}}">Remove item</a>
+{% endfor %}
+{% endfor %}
+Total= {{total}}$<br>
+<a class="btn btn-black" href="{{url_for('payment.new_checkout')}}">PAY NOW</a>
+{% else %}
+<p>Your basket is currently empty.
+</p>
+{% endif %}
+
+
+{% endblock %}
