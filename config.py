@@ -22,8 +22,8 @@ class DevelopmentConfig(Config):
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or 'chuvi0902'
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'FB2D5A5C56'
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
     BT_ENVIRONMENT = 'sandbox'
