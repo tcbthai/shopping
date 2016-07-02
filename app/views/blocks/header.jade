@@ -7,13 +7,13 @@ header.header.white-bg
       | Flat
       span lab
     .horizontal-menu.navbar-collapse.collapse
-      ul.nav.navbar-nav
+      ul.nav.navbar-nav(data-toggle-target="", data-active-hover="true")
         li
           a(href='index.html') Dashboard
         li.active
           a(href='#') Components
         li.dropdown
-          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', href='#')
+          a.dropdown-toggle(href='javascript:void(0);')
             | UI Element
             b.fa.fa-angle-down
           ul.dropdown-menu
@@ -32,7 +32,7 @@ header.header.white-bg
         li
           a(href='basic_table.html') Tables
         li.dropdown
-          a.dropdown-toggle(data-toggle='dropdown', data-hover='dropdown', href='#')
+          a.dropdown-toggle(href='javascript:void(0);')
             | Extra
             b.fa.fa-angle-down
           ul.dropdown-menu
@@ -51,11 +51,11 @@ header.header.white-bg
             li
               a(href='500.html') 500 Error Page
     .top-nav
-      ul.nav.pull-right.top-menu
+      ul.nav.pull-right.top-menu(data-toggle-target="")
         li
           input.form-control.search(type='text', placeholder=' Search')
         li.dropdown
-          a.dropdown-toggle(data-toggle='dropdown', href='#')
+          a.dropdown-toggle(href='#')
             img(alt='', src='images/avatar1_small.jpg')
             span.username Jhon Doue
             b.caret

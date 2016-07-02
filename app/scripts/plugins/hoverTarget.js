@@ -1,5 +1,5 @@
 /**
- *  @name plugin
+ *  @name hover-target
  *  @description description
  *  @version 1.0
  *  @options
@@ -12,7 +12,7 @@
  *    destroy
  */
 ;(function($, window, undefined) {
-  var pluginName = 'plugin';
+  var pluginName = 'hover-target';
 
   function Plugin(element, options) {
     this.element = $(element);
@@ -25,9 +25,8 @@
       var that = this;
 
       that.vars = {
-
+        hoverElm: that.element.find(that.options.hoverElm)
       };
-
     },
     destroy: function() {
       // deinitialize
@@ -49,6 +48,7 @@
   };
 
   $.fn[pluginName].defaults = {
+    hoverElm: '.dropdown-toggle',
   };
 
   $(function() {
