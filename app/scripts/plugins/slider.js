@@ -34,7 +34,7 @@
         accessibility: false,
         autoplay: true,
         autoplaySpeed: that.options.autoplayspeed,
-        infinite: false,
+        infinite: true,
         pauseOnHover: false,
         slidesToShow: that.options.slidesToShow,
         slidesToScroll: that.options.slidesToScroll,

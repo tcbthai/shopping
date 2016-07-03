@@ -1,0 +1,36 @@
+// Variable
+@import "../variable.less";
+// Mixin
+@import "../mixin.less";
+.carousel-banner {
+  .slider {
+    img {
+      width: 100%;
+    }
+    .slick-arrow {
+      &:extend(.icon);
+      position: absolute;
+      border: 0;
+      background-color: transparent;
+      background-image: url(../images/arrow.png);
+      background-position: 0 0;
+      z-index: 99;
+      transition: background-color .3s linear;
+      top: 50%;
+      margin-top: -70px;
+      width: 50px;
+      height: 140px;
+      font-size: 0;
+      color: transparent;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      .no-touch &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .slick-next {
+      transform: scale3d(-1, 1, 1);
+      right: 20px;
+    }
+  }
+}
