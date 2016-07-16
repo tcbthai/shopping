@@ -1,0 +1,20 @@
+include ../mixins/all
+.items-block
+  .title
+    h2
+      span.dot &nbsp;
+        | Best Seller
+      span.dot &nbsp;
+  .container
+    .row.product-list
+      .col-md-4
+        section.panel
+          .pro-img-box
+            +img('img1', 'img/product-list/pro-1.jpg')
+            +link('add to cart', '#').adtocart
+                i.fa.fa-shopping-cart
+          .panel-body.text-center
+              h4
+                +link('title', '#', 'Leopard Shirt Dress')
+              p.price $300.00
+
