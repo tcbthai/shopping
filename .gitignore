@@ -8,3 +8,10 @@ npm-debug.log
 Thumbs.db
 node_modules
 static
+/app/*.pyc
+/app/admin/*.pyc
+/app/auth/*.pyc
+/app/before_request_global/*.pyc
+/app/main/*.pyc
+/app/payment/*.pyc
+*.pyc

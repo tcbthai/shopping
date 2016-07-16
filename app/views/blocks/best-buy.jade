@@ -1,20 +1,49 @@
 include ../mixins/all
 .items-block
-  .title
+  .title.center
     h2
-      span.dot &nbsp;
-        | Best Seller
-      span.dot &nbsp;
+      span.dot
+      | Best Seller
+      span.dot
   .container
     .row.product-list
-      .col-md-4
+      .col-md-3
         section.panel
           .pro-img-box
-            +img('img1', 'img/product-list/pro-1.jpg')
+            +img('img1', 'images/pro-1.jpg')
             +link('add to cart', '#').adtocart
                 i.fa.fa-shopping-cart
           .panel-body.text-center
               h4
                 +link('title', '#', 'Leopard Shirt Dress')
               p.price $300.00
-
+      .col-md-3
+        section.panel
+          .pro-img-box
+            +img('img1', 'images/pro1.jpg')
+            +link('add to cart', '#').adtocart
+                i.fa.fa-shopping-cart
+          .panel-body.text-center
+              h4
+                +link('title', '#', 'Leopard Shirt Dress')
+              p.price $400.00
+      .col-md-3
+        section.panel
+          .pro-img-box
+            +img('img1', 'images/pro2.jpg')
+            +link('add to cart', '#').adtocart
+                i.fa.fa-shopping-cart
+          .panel-body.text-center
+              h4
+                +link('title', '#', 'Leopard Shirt Dress')
+              p.price $500.00
+      .col-md-3
+        section.panel
+          .pro-img-box
+            +img('img1', 'images/pro2.jpg')
+            +link('add to cart', '#').adtocart
+                i.fa.fa-shopping-cart
+          .panel-body.text-center
+              h4
+                +link('title', '#', 'Leopard Shirt Dress')
+              p.price $500.00
